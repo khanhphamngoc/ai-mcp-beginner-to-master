@@ -30,18 +30,19 @@ The Model Context Protocol is a standardized way to give models (like GPT-4 or C
 
 ## Diagram (optional)
 Use Mermaid.js to draw the architecture below.
-mermaid
-    sequenceDiagram
-        participant User
-        participant Thread
-        participant MCP
-        participant Model
+```mermaid
+  sequenceDiagram
+      participant User
+      participant Thread
+      participant MCP
+      participant Model
 
-        User->>Thread: Add message
-        Thread->>MCP: Build context (history, tools, schema)
-        MCP->>Model: Send prompt with context
-        Model-->>MCP: Reply or Tool Call
-        MCP->>Thread: Append model response
+      User->>Thread: Add message
+      Thread->>MCP: Build context (history, tools, schema)
+      MCP->>Model: Send prompt with context
+      Model-->>MCP: Reply or Tool Call
+      MCP->>Thread: Append model response
+```
 
 ## Shared Thread in MCP
 
